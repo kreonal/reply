@@ -1,10 +1,14 @@
-var reply = require('./../');
+var reply = require('../index.js'); // requires reply source code in order to use its methods
 
-reply.confirm('Are you sure you want to do this?', function(err, yes){
-
-  if (!err && yes)
-    console.log("Then let's get on with it!");
-  else
-    console.log("Boo. Maybe next time.");
-
+/**
+ * Asks user for confirmation
+ * @param {Error} err
+ * @param {String} yes - default answer
+ */
+reply.confirm('Is that really what you want to do?', function (err, yes) {
+    if (!err && yes) {
+        console.log("Let's do it!");
+    } else {
+        console.log("Fine. Let's not do it :(");
+    }
 });
