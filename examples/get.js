@@ -29,19 +29,11 @@ var options = {
     }
 };
 
-/**
- * Gets options/questions and prompts user for answers
- * @param {Error} err
- * @param {Array} answers - collection of user's answers
- */
+//Gets options/questions and prompts user for answers
 reply.get(options, function(err, answers) {
     console.log(answers);
     
-    /**
-     * Asks user for confirmation
-     * @param {Error} err
-     * @param {String} yes - default answer
-     */
+    //Asks user for confirmation
     reply.confirm('Is this information correct?', function(err, yes) {
         if (!err && yes) {
             console.log('Thank you for registering!');    
